@@ -1,0 +1,54 @@
+
+
+
+<ion-content>
+  <div class="head-wrap">
+    <div class="head">
+      <ul class="head-menu">
+        <li (click)="loginButton(event)">login</li>
+        <li>signup</li>
+      </ul>
+    </div>
+    <div class="slide-wrap">
+      <div class="slide">
+        <img src="../assets/imgs/top-image-01.jpg">
+        <img src="../assets/imgs/top-image-02.jpg">
+        <img src="../assets/imgs/top-image-03.jpg">
+        <img src="../assets/imgs/top-image-04.jpg">
+        <img src="../assets/imgs/top-image-05.jpg">
+      </div>
+    </div>
+    <ul class="slide-menu">
+      <li>home</li>
+      <li>top</li>
+      <li>bottom</li>
+      <li>outer</li>
+      <li>help</li>
+    </ul>
+  </div>
+  <ion-list>
+    <ion-item *ngFor="let item of items" (click)="itemSeleted(item)">
+      {{item.name}}
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>사용자이름</ion-label>
+      <ion-input type="text" [(ngModel)]="userName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>입력한 사용자이름 출력</ion-label>
+      <ion-label>{{userName}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button full [disabled]="disabledSwitch" (click)="myButton($event);">MyButton</button>
+
+  <button ion-button full [disabled]="disabledSwitch" (click)="loginButton($event);">loginButton</button>
+</ion-content>
+<p>
+  If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
+</p>
+<h2>{{userName}}</h2>

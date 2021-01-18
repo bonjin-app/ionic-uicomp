@@ -1,0 +1,48 @@
+<!--
+  Generated template for the ModalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>modal</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="fnClose()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>Action Switch</ion-label>
+      <ion-toggle [(ngModel)]="profile.actionSwitch"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>이름</ion-label>
+      <ion-input type="text" placeholder="이름을입력하세요" [(ngModel)]="profile.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Gender</ion-label>
+      <ion-select [(ngModel)]="profile.gender">
+        <ion-option value="여자">여자</ion-option>
+        <ion-option value="남자">남자</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>국내거주</ion-label>
+      <ion-checkbox [(ngModel)]="profile.domestic"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Start Date</ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="profile.startDate"></ion-datetime>
+    </ion-item>
+    <button ion-button full (click)="fnSave()">Save</button>
+  </ion-list>
+</ion-content>
